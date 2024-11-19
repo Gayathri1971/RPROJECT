@@ -3,7 +3,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-
 const Navbar = () => {
   return (
     <div>
@@ -25,7 +24,7 @@ const Navbar = () => {
        <Link className='nav-link active' to='/'><i class="fa-solid fa-user fa-lg "></i></Link> 
         </li>
       </ul>
-      <form class="d-flex me-3 me-5 ms-2" >
+      < form class="d-flex me-3 me-5 ms-2" >
     
       <i class="fa-solid fa-cart-shopping fa-lg"></i>
       </form>

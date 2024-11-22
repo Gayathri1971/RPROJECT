@@ -1,6 +1,6 @@
 import React from 'react';
-// import { DiscountProductsMapping } from './DiscoutProductsmapping';
-import { discountProductList } from './DiscoutProductList';
+import { DiscountProductsMapping } from './DiscoutProductsmapping';
+import { discountProductList } from './DiscountProductList';
 
  export const DiscountProducts = () => {
   return (

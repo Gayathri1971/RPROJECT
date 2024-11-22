@@ -1,11 +1,11 @@
 import React from 'react';
-import { serviceData } from './ServiceData';
-import Datamaping from './Datamaping';
+import DataMapping from './DataMapping'
+import { serviceData } from './Data'; // Ensure serviceData is correctly exported from Data.js
 
 const Serviceproductdata = () => {
   return (
     <div>
-      <Datamaping data={serviceData} />
+      <DataMapping productData={serviceData} />
     </div>
   );
 };

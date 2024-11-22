@@ -1,0 +1,50 @@
+.container {
+    padding: 0 15px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+  }
+  
+  .col-md-4 {
+    flex: 0 0 32%; /* 3 cards per row on medium screens */
+    box-sizing: border-box;
+  }
+  
+  .product-item {
+    border: 1px solid #ddd; /* Light border for product card */
+    padding: 20px;
+    height: 100%; /* Ensure cards are the same height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+  }
+  
+  .product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .product-price {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .text-control {
+    border: 1px solid rgb(130, 127, 127);
+    border-radius: 50%;
+    padding: 5px;
+  }

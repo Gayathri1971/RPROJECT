@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Product.css'; // Ensure styling is handled here
+import './Product.css'; 
 
 const ProductMapping = ({ data = [] }) => {
-  const [selectedProduct, setSelectedProduct] = useState(null); // Track the clicked product
+  const [selectedProduct, setSelectedProduct] = useState(null); 
 
   // Handler for product click
   const handleProductClick = (product) => {

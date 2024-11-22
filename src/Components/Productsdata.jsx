@@ -1,6 +1,6 @@
 import React from 'react';
 import Datamaping from './Datamaping';
-import { SliderData } from './Sliderdata';
+import { SliderData } from './Data';
 
 const Productsdata = () => {
   return (

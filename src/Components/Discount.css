@@ -1,0 +1,58 @@
+.container {
+    padding: 0 15px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between the cards */
+  }
+  
+  .col-md-4 {
+    flex: 0 0 32%; /* Adjust width for 3 cards per row */
+    box-sizing: border-box;
+  }
+  
+  .product-item {
+    border: 1px solid #ddd; /* Light border for each card */
+    padding: 20px; /* Add padding inside each card */
+    height: 100%; /* Ensure all cards take full available height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Align content evenly within the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    background-color: #fff; /* White background for the card */
+  }
+  
+  .percentage {
+    width: 80px;
+    padding-left: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Limit the image height */
+    object-fit: contain; /* Ensure the image keeps its aspect ratio */
+  }
+  
+  .product-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .product-price {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .text-control {
+    border: 1px solid rgb(130, 127, 127);
+    border-radius: 50%;
+    padding: 5px;
+  }
+  

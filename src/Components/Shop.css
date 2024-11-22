@@ -1,0 +1,97 @@
+.shop-page{
+    background-image: url(https://www.shutterstock.com/image-vector/abstract-background-image-global-online-260nw-2322088941.jpg);
+    height: 200px;  
+}
+h1{
+  font-weight: bold;
+  
+}
+.navbarr{
+    display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  height: 40vh;
+
+}
+.card img{
+  height: 300px;
+}
+.cards{
+    margin-top: 150px;
+}
+.search{
+    font-size: 20px;
+    padding-top: 13px;
+    margin-left: -30px;
+}
+.category{
+    background-color: rgb(1, 1, 39);
+    color: white;
+    border-radius: 10px;
+}
+.category:hover{
+  background-color: white;
+  color: black;
+}
+.navbar-nav {
+    margin-left: 200px;
+}   
+.searchbar{
+    margin-left: 300px;
+    padding-left:15 px;    
+}
+
+
+.image{
+    height: 300px;
+}
+.productlist{
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+  .row {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between the cards */
+  }
+  
+  .col-md-4 {
+    flex: 0 0 32%; /* Adjust width for 3 cards per row */
+    box-sizing: border-box;
+  }
+  
+  .productcard{
+    border: 1px solid #ddd; /* Light border for each card */
+    padding: 20px; /* Add padding inside each card */
+    height: 100%; /* Ensure all cards take full available height */
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between; /* Align content evenly within the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    background-color: #fff; /* White background for the card */
+  }
+    
+  .image {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Limit the image height */
+    object-fit: contain; /* Ensure the image keeps its aspect ratio */
+  }
+  
+  .text-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  

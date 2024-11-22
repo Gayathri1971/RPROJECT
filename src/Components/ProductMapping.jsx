@@ -32,6 +32,13 @@ const ProductMapping = ({ data = [] }) => {
               <p>{selectedProduct.description}</p>
               <p>Price: ${selectedProduct.price}</p>
               <p>Category: {selectedProduct.category}</p>
+              <div className="d-flex">
+                      <i className="fa-solid fa-star text-warning"></i>
+                      <i className="fa-solid fa-star text-warning"></i>
+                      <i className="fa-solid fa-star text-warning"></i>
+                      <i className="fa-solid fa-star text-warning"></i>
+                      <i className="fa-solid fa-star text-warning"></i>
+                    </div>
               <button className="btn btn-primary">Add to Cart</button>
             </div>
           </div>

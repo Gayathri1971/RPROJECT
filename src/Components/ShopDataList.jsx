@@ -5,17 +5,12 @@ const ShopDataList = ({ data }) => {
     <div className="productlist row ">
       {data.length > 0 ? (
         data.map((product) => (
+          
           <div key={product.id} className="productcard col-md-4 border">
+                        <img src={product.imgUrl} alt={product.productName} className='image' />
+
             <h5 className='text-name'>{product.productName}</h5>
-            <img src={product.imgUrl} alt={product.productName} className='image' />
-            <div className="d-flex justify-content-center mb-2">
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                </div>
-            <p>Avg Rating: {product.avgRating}</p>
+            
             <div className="d-flex justify-content-between align-items-center">
                 <span className="card-text fw-bold">${product.price}</span>
                 <button className="btn border rounded-circle">
@@ -32,3 +27,5 @@ const ShopDataList = ({ data }) => {
 };
 
 export default ShopDataList;
+
+

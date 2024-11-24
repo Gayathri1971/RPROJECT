@@ -1,29 +1,20 @@
 import React, { useState } from 'react';
-import './Arrivals.css';
+import './Arrivals.css'; // Ensure styling is handled here
 import ProductData from './ProductData';
-import BestSalesMapping from './BestSaleMapping';
 
 const ArrivalMapping = ({ data = [] }) => {
   const [selectedProduct, setSelectedProduct] = useState(null); // Track the clicked product
-  const [cart, setCart] = useState([]); // Track products added to the cart
 
   // Handler for product click
   const handleProductClick = (product) => {
     setSelectedProduct(product); // Set the clicked product as selected
   };
+  
 
   // Filter related products by category, excluding the selected product
   const getRelatedProducts = (category) => {
-    if (!selectedProduct) return []; // Avoid errors if no product is selected
     return data.filter((item) => item.category === category && item.id !== selectedProduct.id);
   };
-
-  // Handle Add to Cart functionality
-  const handleAddToCart = (product) => {
-    setCart([...cart, product]); // Add product to the cart
-    alert(`${product.productName} has been added to the cart!`); // Optional feedback
-  };
-  
 
   return (
     <div className="container">
@@ -38,16 +29,18 @@ const ArrivalMapping = ({ data = [] }) => {
               src={selectedProduct.imgUrl}
               alt={selectedProduct.productName}
               className="product-image me-4"
-              onError={(e) => (e.target.src = '/fallback-image.jpg')} // Fallback image
             />
             <div>
+              
               <h2>{selectedProduct.productName}</h2>
               <p>{selectedProduct.description}</p>
               <p>Price: ${selectedProduct.price}</p>
               <p>Category: {selectedProduct.category}</p>
+              {/* <button className="btn btn-primary">Add to Cart</button> */}
               <button
-                className="btn btn-primary"
-                onClick={() => handleAddToCart(selectedProduct)} // Add product to cart
+                className="btn"
+                style={{ backgroundColor: 'navy', color: 'white', padding: '5px', borderRadius: '4px' }}
+                // onClick={() => handleAddToCart(selectedProduct)}
               >
                 Add to Cart
               </button>
@@ -64,24 +57,16 @@ const ArrivalMapping = ({ data = [] }) => {
                     src={relatedItem.imgUrl}
                     alt={relatedItem.productName}
                     className="product-image"
-                    onError={(e) => (e.target.src = '/fallback-image.jpg')} // Fallback image
                   />
                   <h4 className="product-name">{relatedItem.productName}</h4>
                   <div className="d-flex justify-content-between align-items-center p-2">
                     <span className="product-price">${relatedItem.price}</span>
-                    <div className="d-flex">
-                      <i className="fa-solid fa-star text-warning"></i>
-                      <i className="fa-solid fa-star text-warning"></i>
-                      <i className="fa-solid fa-star text-warning"></i>
-                      <i className="fa-solid fa-star text-warning"></i>
-                      <i className="fa-solid fa-star text-warning"></i>
-                    </div>
                     <button
-                      className="btn btn-outline-primary"
-                      onClick={() => handleAddToCart(relatedItem)} // Add product to cart
-                    >
-                      +
-                    </button>
+                    className="btn btn-outline-primary"
+                    // onClick={() => handleAddToCart(item.)} // Add product to cart
+                  >
+                    +
+                  </button>
                   </div>
                 </div>
               </div>
@@ -102,34 +87,31 @@ const ArrivalMapping = ({ data = [] }) => {
                   src={item.imgUrl}
                   alt={item.productName}
                   className="product-image"
-                  onError={(e) => (e.target.src = '/fallback-image.jpg')} // Fallback image
                 />
-                <h3 className="product-name">{item.productName}</h3>
-                <div className="d-flex justify-content-between align-items-center p-2">
-                  <span className="product-price">${item.price}</span>
-                  <div className="d-flex">
+                 <div className="d-flex">
                     <i className="fa-solid fa-star text-warning"></i>
                     <i className="fa-solid fa-star text-warning"></i>
                     <i className="fa-solid fa-star text-warning"></i>
                     <i className="fa-solid fa-star text-warning"></i>
                     <i className="fa-solid fa-star text-warning"></i>
                   </div>
-                  <button
+                <h3 className="product-name">{item.productName}</h3>
+                <div className="d-flex justify-content-between align-items-center p-2">
+                    <span className="product-price">${item.price}</span>
+                    <button
                     className="btn btn-outline-primary"
-                    onClick={() => handleAddToCart(item)} // Add product to cart
+                    // onClick={() => handleAddToCart(item)} // Add product to cart
                   >
                     +
                   </button>
-                </div>
+                  </div>
               </div>
             </div>
           ))}
         </div>
       )}
 
-      {/* Optional component for additional data (if required) */}
-      {/* <ProductData /> */}
-      {/* < BestSalesMapping /> */}
+      <ProductData />
     </div>
   );
 };

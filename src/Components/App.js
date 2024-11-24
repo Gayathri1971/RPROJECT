@@ -20,6 +20,8 @@ function App() {
         <Route path='shop' element={<Shop />}/>
         <Route path='productdata' element={<Productsdata />} />
         <Route path='cart' element={ <Cart />} />
+        {/* <Route path='cartpage' element={  <CartPage />} /> */}
+
       </Routes>
       <Footer />
     </div>

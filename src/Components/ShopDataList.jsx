@@ -13,7 +13,7 @@ const ShopDataList = ({ data }) => {
             
             <div className="d-flex justify-content-between align-items-center">
                 <span className="card-text fw-bold">${product.price}</span>
-                <button className="btn border rounded-circle">
+                <button className="btn btn-outline-primary">
                   +
                 </button>
               </div>

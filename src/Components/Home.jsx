@@ -9,8 +9,9 @@ function home() {
   return (
     <div>
          <Navbar />
-      <Productsdata/>
-      {/* <ArrivalMapping /> */}
+      {/* <Productsdata/> */}
+      <ArrivalsData />
+      < BestSalesMapping />
       <Footer />
     </div>
   )

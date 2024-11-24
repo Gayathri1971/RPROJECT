@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import './Product.css'; 
+import './Product.css'; // Ensure styling is handled here
 
 const ProductMapping = ({ data = [] }) => {
-  const [selectedProduct, setSelectedProduct] = useState(null); 
+  const [selectedProduct, setSelectedProduct] = useState(null); // Track the clicked product
+  const [cart, setCart] = useState([]); // Track items added to the cart
 
-  // Handler for product click
+  // Handle clicking a product
   const handleProductClick = (product) => {
     setSelectedProduct(product); // Set the clicked product as selected
+  };
+
+  // Handle adding a product to the cart
+  const handleAddToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+    alert(`${product.productName} has been added to the cart!`);
   };
 
   // Get related products based on the selected product's category
@@ -16,8 +23,6 @@ const ProductMapping = ({ data = [] }) => {
 
   return (
     <div className="container">
-      <h1 className="text-center mt-5 mb-5">Best Products</h1>
-
       {selectedProduct ? (
         <>
           {/* Single Product Details */}
@@ -29,68 +34,59 @@ const ProductMapping = ({ data = [] }) => {
             />
             <div>
               <h2>{selectedProduct.productName}</h2>
-              <p>{selectedProduct.description}</p>
-              <p>Price: ${selectedProduct.price}</p>
-              <p>Category: {selectedProduct.category}</p>
-              <div className="d-flex">
-                      <i className="fa-solid fa-star text-warning"></i>
-                      <i className="fa-solid fa-star text-warning"></i>
-                      <i className="fa-solid fa-star text-warning"></i>
-                      <i className="fa-solid fa-star text-warning"></i>
-                      <i className="fa-solid fa-star text-warning"></i>
-                    </div>
-              <button className="btn btn-primary">Add to Cart</button>
+              <p>
+                <strong>Description:</strong> {selectedProduct.description}
+              </p>
+              <p>
+                <strong>Price:</strong> ${selectedProduct.price}
+              </p>
+              <p>
+                <strong>Category:</strong> {selectedProduct.category}
+              </p>
+              <button
+                className="btn"
+                style={{
+                  backgroundColor: 'navy',
+                  color: 'white',
+                  padding: '5px',
+                  borderRadius: '4px',
+                }}
+                onClick={() => handleAddToCart(selectedProduct)}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
 
           {/* Related Products */}
           <h3 className="mb-4">Related Products</h3>
-          <div className="row">
+          <div className="related-products">
             {getRelatedProducts(selectedProduct.category).map((relatedItem) => (
-              <div key={relatedItem.id} className="col-md-4 mb-4">
-                <div
-                  className="product-item"
+              <div key={relatedItem.id} className="related-product-card">
+                <img
+                  src={relatedItem.imgUrl}
+                  alt={relatedItem.productName}
+                  className="related-product-image"
                   onClick={() => handleProductClick(relatedItem)} // Click to view this product
+                />
+                <h4>{relatedItem.productName}</h4>
+                <p>${relatedItem.price}</p>
+                <button
+                  className="btn btn-outline-primary"
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent triggering product click
+                    handleAddToCart(relatedItem);
+                  }}
                 >
-                  <img
-                    src={relatedItem.imgUrl}
-                    alt={relatedItem.productName}
-                    className="product-image"
-                  />
-                  <h4 className="product-name">{relatedItem.productName}</h4>
-                  <span className="product-price">${relatedItem.price}</span>
-                </div>
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>
         </>
       ) : (
-        // Default Product Listing
-        <div className="row">
-          {data.map((item) => (
-            <div
-              key={item.id}
-              className="col-md-4 mb-4"
-              onClick={() => handleProductClick(item)} // Select product on click
-            >
-              <div className="product-item">
-                <img
-                  src={item.imgUrl}
-                  alt={item.productName}
-                  className="product-image"
-                />
-                <h3 className="product-name">{item.productName}</h3>
-                <div className="d-flex">
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                </div>
-                <span className="product-price">${item.price}</span>
-              </div>
-            </div>
-          ))}
+        <div className="text-center">
+          {/* <h2>Please select a product to view its details.</h2> */}
         </div>
       )}
     </div>

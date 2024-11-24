@@ -48,3 +48,15 @@
     border-radius: 50%;
     padding: 5px;
   }
+  .badge-cart {
+    position: absolute;
+    top: -23px;
+    right: -5px;
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+  

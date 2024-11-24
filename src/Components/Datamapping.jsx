@@ -29,7 +29,7 @@ const DiscountProductsMapping = () => {
       </div>
 
       <div className="container my-5">
-        <h2 className="text-center mb-4">Discount Products</h2>
+        <h1 className="text-center mt-5 mb-5">Discount Products</h1>
 
         {/* Conditionally render selected product details */}
         {selectedProduct ? (
@@ -47,7 +47,14 @@ const DiscountProductsMapping = () => {
                 <p>{selectedProduct.shortDesc}</p>
                 <p>Price: ${selectedProduct.price}</p>
                 <p>Category: {selectedProduct.category}</p>
-                <button className="btn btn-primary">Add to Cart</button>
+                {/* <button className="btn btn-primary">Add to Cart</button> */}
+                <button
+                className="btn"
+                style={{ backgroundColor: 'navy', color: 'white', padding: '5px', borderRadius: '4px' }}
+                // onClick={() => handleAddToCart(selectedProduct)}
+              >
+                Add to Cart
+              </button>
               </div>
             </div>
 
